@@ -6,6 +6,8 @@
     <title>Anjana Herath | Software Engineering Student</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    
+         
 </head>
 <body>
     <!-- Header -->
@@ -23,6 +25,10 @@
                     <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun" style="display: none;"></i>
+                </div>
                 <div class="menu-toggle">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -55,13 +61,11 @@
                             <img src="icons/languages/java.png" class="tech-icon" alt="JAVA">
                             <img src="icons/languages/css.png" class="tech-icon" alt="CSS">
                             <img src="icons/languages/js.png" class="tech-icon" alt="JavaScript">
-                            <img src="icons/languages/html.png" class="tech-icon" alt="HTML">
-                            
                         </div>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="c:\Users\vinuk\Documents\BreazyGit\PORTFOLIO\Myself.jpg" alt="Anjana Herath">
+                    <img src="icons/Myself/myself.JPG" alt="Anjana Herath">
                 </div>
             </div>
         </div>
@@ -76,7 +80,7 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="c:\Users\vinuk\Documents\BreazyGit\PORTFOLIO\Myself.jpg" alt="About Anjana">
+                    <img src="icons/Myself/myself.JPG" alt="About Anjana">
                 </div>
                 <div class="about-text">
                     <h3>My Coding Journey</h3>
@@ -115,10 +119,8 @@
                         <p>A POS System developed for BUDGET BASKET SUPERMARKET </p>
                         <div class="project-tech">
                             <span class="tech-tag">C#</span>
-                            
                         </div>
                         <div class="project-links">
-                            
                             <a href="https://github.com/Anjaboii/PUSL2019-Information-Management-and-Retrieval-Year-2-Semester-1.git"><i class="fab fa-github"></i> Code</a>
                         </div>
                     </div>
@@ -181,20 +183,16 @@
                         <h3>2009-2022</h3>
                         <h4>St'Marys College Kegalle</h4>
                         <p>"I pursued Combined Mathematics with Information Technology for my Advanced Level studies, which strengthened my logical thinking and technical skills."</p>
-                        
                     </div>
                 </div>
-                    <div class="timeline-item">
+                <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>2024 - Present</h3>
                         <h4>BSc in Software Engineering</h4>
                         <p>University of Plymouth</p>
                         <p>Courses: Database Systems, Web Development</p>
                     </div>
-                    
-                    </div>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -222,6 +220,7 @@
                         <a href="https://web.facebook.com/anjana.herath.94?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -277,6 +276,39 @@
                     });
                 }
             });
+        });
+
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        const moonIcon = themeToggle.querySelector('.fa-moon');
+        const sunIcon = themeToggle.querySelector('.fa-sun');
+        const htmlElement = document.documentElement;
+
+        // Check for saved user preference or use system preference
+        const savedTheme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        if (savedTheme === 'dark') {
+            htmlElement.setAttribute('data-theme', 'dark');
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline-block';
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+            
+            if (isDark) {
+                htmlElement.removeAttribute('data-theme');
+                moonIcon.style.display = 'inline-block';
+                sunIcon.style.display = 'none';
+                localStorage.setItem('theme', 'light');
+            } else {
+                htmlElement.setAttribute('data-theme', 'dark');
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'inline-block';
+                localStorage.setItem('theme', 'dark');
+            }
         });
 
         
