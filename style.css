@@ -549,7 +549,9 @@
             display: grid;
             grid-template-columns: fr 1fr;
             gap: 4rem;
-            text-align: center;
+            
+            align-items: center; /* Centers items horizontally */
+            justify-content: center;
         }
 
         .contact-info h3 {
@@ -587,8 +589,9 @@
         }
 
         .social-links a:hover {
-            color: var(--primary);
+            color: #212a33; 
             transform: translateY(-3px);
+
         }
 
         .form-group {
