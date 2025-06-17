@@ -906,3 +906,27 @@
 .slider-indicator.active {
     background: white;
 }
+
+
+.cv-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--dark); /* For light text on dark bg */
+    background-color: var(--primary);
+    border: 2px solid transparent;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.cv-button:hover {
+    background-color: var(--secondary);
+    color: var(--dark);
+    border-color: var(--accent);
+}
+
+/* Optional: Add some margin if placed near other elements */
+.cv-button + * {
+    margin-left: 1rem;
+}
