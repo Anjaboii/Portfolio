@@ -52,7 +52,7 @@
 
         /* Typography */
         h1, h2, h3, h4 {
-            font-weight: 700;
+            font-weight: 600;
             line-height: 1.2;
         }
 
@@ -425,6 +425,8 @@
             color: var(--text-light);
             margin-bottom: 1rem;
             flex-grow: 1;
+            text-align: justify;
+            line-height: 1.7;
         }
 
         .project-tech {
@@ -536,6 +538,7 @@
 
         .timeline-content p {
             color: var(--text-light);
+            text-align: justify;
         }
 
         /* Contact Section */
